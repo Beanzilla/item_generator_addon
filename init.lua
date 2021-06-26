@@ -29,6 +29,12 @@ if igen ~= nil then
             minetest.log("action", "[igen_addon] farming loaded!")
         end
     end
+    if minetest.get_modpath("biofuel") ~= nil then
+        dofile(modpath.."/addons/minetest_biofuel.lua")
+        if igen_addon["log_loaded_mods"] then
+            minetest.log("action", "[igen_addon] biofuel loaded!")
+        end
+    end
 else
     error("[igen_addon] Failed getting Item Generator API!")
 end
